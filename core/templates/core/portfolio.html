@@ -22,10 +22,12 @@
 	      		<h2 class="section-heading title">{{proyecto.titulo}}</h2>   
 	          <p>{{proyecto.descripcion}}</p>
 	          <p><a href="http://google.com">Más información</a></p>
+	          {% if user.is_authenticated %}
+	          	<a href="{% url 'admin:portafolio_project_change' proyecto.id %}">Editar</a>
+	          {% endif %}
 	      	</div>
 	      </div>
 	     {% endfor %}
 		</div>
-
 
 {% endblock content %} 
